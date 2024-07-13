@@ -1,0 +1,15 @@
+# 1) install "fpdf"
+
+# pip install fpdf
+
+# 2) 
+# now write following code:
+
+from fpdf import FPDF
+
+ref=FPDF()
+ref.add_page()
+ref.set_font("Arial",size=20)
+ref.cell(200,100,"Welcome to PDF world",align="L")
+
+ref.output("D:\\pythonbs4images\\pythonpdf.pdf")

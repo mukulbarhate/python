@@ -1,0 +1,24 @@
+"""
+in Python * is used to unpack the iterables
+"""
+
+mylist=[10,20,30,40]
+
+print(mylist)
+print(*mylist)
+
+mytuple=(1,2,3,4,5)
+print(mytuple)
+print(*mytuple)
+
+myset={100,200,300,400}
+print(myset)
+print(*myset)
+
+mydict={"p001":"Anil","p002":"Reena","p003":"Vijar"}
+print(mydict)
+print(*mydict)
+
+mystring="hello"
+print(mystring)
+print(*mystring)

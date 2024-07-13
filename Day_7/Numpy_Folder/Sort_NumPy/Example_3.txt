@@ -1,0 +1,45 @@
+import numpy as np
+
+print("****************")
+myar = np.array([[[10, 20, 30], [4, 50, 6]], [[70, 8, 90], [65, 110, 12]]])
+print(myar)
+# [[[ 10  20  30]
+#   [  4  50   6]]
+
+#  [[ 70   8  90]
+#   [ 65 110  12]]]
+print("Ascending order 3d array axis 0")
+"""
+10 will be compared with 70, 20 will be with 8, 30 will be with 90
+4 will be with 65, 50 will be with 110, 6 will be with 12
+"""
+arr1 = np.sort(myar, axis=0)
+print(arr1)
+# [[[ 10   8  30]
+#   [  4  50   6]]
+
+#  [[ 70  20  90]
+#   [ 65 110  12]]]
+
+
+
+print("Ascending order 3d array axis 1")
+""" 10 will be compared with 4, 20 will be with 50, 30 will be compared with 6
+70 will be compared with 65, 8 will be compared with 110, 90 will be compared with 12"""
+arr1 = np.sort(myar, axis=1)
+print(arr1)
+# [[[  4  20   6]
+#   [ 10  50  30]]
+
+#  [[ 65   8  12]
+#   [ 70 110  90]]]
+
+print("axis 2 sort\n")
+arr1 = np.sort(myar, axis=2)
+print(arr1)
+# [[[ 10  20  30]
+#   [  4   6  50]]
+
+#  [[  8  70  90]
+#   [ 12  65 110]]]
+

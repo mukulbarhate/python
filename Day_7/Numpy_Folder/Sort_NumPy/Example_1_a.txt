@@ -1,0 +1,41 @@
+import numpy as np
+
+# sort without any axis
+
+a = np.array([[12, 25], [30, 18]])
+
+print("ascending order column-wise")
+arr1 = np.sort(a, axis=0)  # descending order but positive numbers
+print(arr1)
+# [[12 18]
+#  [30 25]]
+
+print("Reverse order column-wise but negative numbers\n")
+arr1 = np.sort(-a, axis=0)  # descending order but negative numbers
+print(arr1)
+# [[-30 -25]
+#  [-12 -18]]
+
+print("Reverse order column-wise positive numbers\n")
+arr1 = -np.sort(-a, axis=0)  # descending order (negative and negative=positive) numbers
+print(arr1)
+# [[30 25]
+#  [12 18]]
+
+print("ascending order row-wise")
+arr1 = np.sort(a, axis=1)  # descending order but negative numbers
+print(arr1)
+# [[12 25]
+#  [18 30]]
+
+print("Reverse order row-wise but negative numbers\n")
+arr1 = np.sort(-a, axis=1)  # descending order but negative numbers
+print(arr1)
+# [[-25 -12]
+#  [-30 -18]]
+
+print("Reverse order row-wise but positive numbers\n")
+arr1 = -np.sort(-a, axis=1)  # descending order (negative and negative=positive) numbers
+print(arr1)
+# [[25 12]
+#  [30 18]]

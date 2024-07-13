@@ -1,0 +1,13 @@
+from numpy import *
+first=array([[10,20,30],[40,50,60],[70,80,90]])
+print(first)
+print("\n")
+print("enter a number to perform arithmetic operations on each and every element of the array")
+num=int(input())
+print(first+num)
+print("\n")
+print(first-num)
+print("\n")
+print(first*num)
+print("\n")
+print(first//num)

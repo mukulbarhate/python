@@ -1,0 +1,29 @@
+1) define a class Sample with
+	data as instance member
+	init which takes one parameter in order to initialize "data"
+
+make sure following things are possible
+
+s1=Sample(7)
+s2=Sample(5)
+s3=Sample(8)
+s4=Sample(12)
+
+print(s4-s1)
+print(s1+s2)
+print(s1*s3)
+
+
+
+
+2) define a class MyClass with
+	x as instance member
+	init which takes one parameter in order to initialize "x"
+
+create two instances by passing numbers.
+
+now check :
+
+> , < , == on these instances
+
+

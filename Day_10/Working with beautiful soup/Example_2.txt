@@ -1,0 +1,13 @@
+import requests
+from bs4 import BeautifulSoup
+
+page=requests.get("https://www.rediff.com/cricket")
+# page=requests.get("https://www.newyorker.com/")
+
+soup=BeautifulSoup(page.text,'html.parser')
+
+# for this go to the page and press  ctrl+shift+c
+
+links=soup.findAll("h2",attrs={"class":"hdtitle"})
+for i in links:
+    print(i.text)

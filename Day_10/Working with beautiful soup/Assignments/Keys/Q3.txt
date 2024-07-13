@@ -1,0 +1,12 @@
+
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://www.rediff.com/movies"
+page = requests.get(URL)
+soup=BeautifulSoup(page.text,'html.parser')
+
+s = soup.find('div', class_='cell topicons')
+content = s.find_all('a')
+for i in content:
+    print(i.get("href"))

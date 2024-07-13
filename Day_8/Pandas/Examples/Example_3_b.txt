@@ -1,0 +1,5 @@
+# labels or indexes can be of any type
+from pandas import *
+
+first=Series([10,20,30,40,50],index=['hello','q',3,6.7,False])
+print(first)

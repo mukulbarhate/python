@@ -1,0 +1,11 @@
+prnnos=[1,2,3,4,5]
+names={"Rahul","Rohit","Sachin","Anil","Saurav"}
+
+lambda x: 'positive' if x > 0 else ('zero' if x == 0 else 'negative')
+
+
+mydisp=lambda x: list(x) if type(x) is set else(set(x) if type(x) is list else "neither list nor set")
+
+print(mydisp(prnnos))
+print(mydisp(names))
+print(mydisp("hello"))

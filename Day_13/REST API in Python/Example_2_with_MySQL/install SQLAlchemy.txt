@@ -1,0 +1,8 @@
+File
+	settings
+		project: <name of the project>
+			python interpreter
+				install
+					SQLAlchemy
+					Flask-SQLAlchemy
+					mysqlclient

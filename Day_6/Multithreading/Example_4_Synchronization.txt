@@ -1,0 +1,26 @@
+# example of  synchronization
+
+import threading
+import time
+
+lock=threading.Lock()
+def mytarget(message):
+    lock.acquire()
+    current_thread=threading.current_thread()
+    for i in range(0,5):
+        print(message)
+        # time.sleep(0.5) # it's of no use in synchronization
+    print("Above message displayed by \t",current_thread)
+    lock.release()
+
+t1 = threading.Thread(target=mytarget,args=("Welcome",))
+t2 = threading.Thread(target=mytarget,args=("Hi",))
+
+t1.start()
+t2.start()
+
+t1.join()   # main thread will wait till t1 finishes
+t2.join()   # main thread will wait till t2 finishes
+
+print("Done")
+print("\nDone is printed by\t",threading.current_thread())

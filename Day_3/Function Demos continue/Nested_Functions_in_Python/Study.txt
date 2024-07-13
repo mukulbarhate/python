@@ -1,0 +1,200 @@
+def outer():
+    print(x)
+
+x=100
+
+outer()
+
+
+
+
+def outer():
+    def inner():
+        print("inside inner function\t",x)
+
+    inner()
+x=100
+
+outer()
+
+
+
+
+
+def outer():
+    x = 100
+    def inner():
+        print("inside inner function\t",x)
+
+    inner()
+
+
+outer()
+
+
+
+
+
+
+def outer():
+    x = 100
+    def inner():
+        print("inside inner function\t",x)
+
+    inner()
+
+
+outer()
+print("outside outer function\t",x)    #  NameError: name 'x' is not defined
+
+
+
+
+# scope means where you can access a specific variable or a function in our code.
+
+in the above code snippet we have a question
+
+what is the scope of a variable "x" ?
+	or
+is "x" inside scope of a function "inner()" ?
+
+both these questions are same.
+
+
+scope is dependent on the "lexical environment"
+
+what is "lexical environment" ?
+
+
+when we run the above code , call stack gets created
+
+
+
+global execution context [ pushed to the call stack ]
+	where global variables/functions are stored
+	reference = value
+
+when you invoke a function "outer" [ pushed to the call stack ]
+	execution context is created for "outer"
+		inside which "x" and "inner" will get memory
+
+when you invoke "inner()" [ pushed to the call stack ]
+	execution context is created for "inner()"
+		there is no variable defined inside "inner()"
+
+
+imp:- wherever an "execution context" is created, a "lexical environment" is also created. 
+The meaning of "lexical environment" is 
+	local memory + lexical environment of parent
+
+what is lexical exactly?
+	lexical means in hierarchy or in a sequence.
+
+"inner()" function is lexically sitting inside "outer()" function.
+in simple language where exactly "inner()" function is physically present. "inner()" function is physically present inside "outer()" function.
+That means "inner()" is lexically inside the "outer()"
+and "outer()" is lexically inside "global scope"
+
+so what is exactly stored inside the "execution context" created for each function?
+	its local members + reference to the lexical environment of parent 
+
+so, "execution context" of "inner" has
+	its local members ( we don't have any local member inside "inner")
+		+
+	reference to the lexical environment of its parent i.e. "outer"
+
+"execution context" of "outer" has
+	its local members ( variable "x")
+		+
+	reference to the lexical environment of its parent i.e. global scope
+
+"execution context" of "global" has
+	its  members ( global variables)
+		+
+	reference to the lexical environment of its parent (since there is no parent to global, the reference is "null")
+
+
+[ draw the diagram , and discuss this is how lexical environment looks like in the memory ]
+
+
+Let's discuss how this (lexical environment) is used.
+
+e.g.
+
+
+def outer():
+    x = 100
+    def inner():
+        print("inside inner function\t",x)
+
+    inner()
+
+
+outer()
+
+in the above code , when the statement
+		print("inside inner function\t",x)   is executed,
+python interpreter tries to find out "x" in the local memory of "inner()"
+	it won't find because there is no "x" variable defined inside "inner()" function. so now, python interpreter goes to the "lexical environment of inner()'s parent " i.e the lexical environment of "outer" and try to search "x" in the lexical environment of "outer". since interpreter finds "x" in the lexical scope of "outer" , it goes back to inner() and prints the value of "x"
+
+suppose "x" variable were not there in "outer" , in that case interpreter would have accessed "lexical environment of parent of outer" i.e. global environment. If "x" is defined globally then it will print "x" inside "inner".
+
+And if "x" is also not globally available (suppose we havn't declared "x" anywhere in the code), interpreter would have given
+	NameError: name 'x' is not defined
+for the statement :
+	print("inside inner function\t",x)  inside "inner()" function.
+
+this process of searching variable 
+	from a local scope to the parent's lexical environment , from parent's lexical environment to its parent lexical environment and so on ........ is called as "scope chain"
+
+
+place the breakpoints at
+
+	x = 100
+
+	print("inside inner function\t",x)
+
+		and
+	inner
+
+
+and debug the code
+
+after clicking "step over" when control goes inside "inner"
+	observe "Frames" section in the debug window
+	you will observe
+		a call stack
+
+			inner
+			outer
+			module [trial.py]  # the name of .py file
+
+
+when the "inner" is selected , observ the right side window
+	you will notice "x" over there
+
+click on "step over" when control goes to "outer"
+	you will notice "x" and "inner" over there.
+
+click on "step over" when control goes to "module [trial.py]"
+	you will notice "outer" along with other things
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+			
+
+

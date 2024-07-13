@@ -1,0 +1,8 @@
+go to google and type:
+
+repl it
+
+site will open
+which will allow you to choose the technology in which you want to work
+it will also allow you to create your "repl" 
+give some name to your "repl"

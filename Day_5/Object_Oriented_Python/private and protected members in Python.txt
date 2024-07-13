@@ -1,0 +1,16 @@
+class MyClass:
+    def __init__(self):
+        self.a=10         #  public
+        self.__b=20       #  private
+        self._c=30        #  protected
+
+    def disp(self):
+        print(self.a)
+        print(self.__b)
+        print(self._c)
+
+m=MyClass()
+m.disp()
+print(m.a)
+# print(m.__b)     #  AttributeError: 'MyClass' object has no attribute '__b'
+print(m._c)

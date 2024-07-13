@@ -1,0 +1,10 @@
+When we have to work on Tabular data, we prefer the pandas module.When we have to work on Numerical data, we prefer the numpy module.
+
+The powerful tools of pandas are Data frame and Series.
+Whereas the powerful tool of numpy is Arrays.
+
+Pandas consume more memory. Numpy is memory efficient.
+
+Indexing of the pandas series is very slow as compared to numpy arrays.
+
+Pandas has a higher industry application as compare to Numpy.

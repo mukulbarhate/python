@@ -1,0 +1,54 @@
+import numpy as np
+
+arr1= np.array([10,20,30])
+arr2=np.array([40,50,60])
+arr3=np.array([70,80,90])
+
+hstack1=np.hstack((arr1,arr2,arr3))
+print("Let's print horizontal stack")
+print(hstack1)
+"""
+[10 20 30 40 50 60 70 80 90]   horizontally stacked
+"""
+vstack1=np.vstack((arr1,arr2,arr3))
+print("Let's print vertical stack")
+print(vstack1)
+"""
+[[10 20 30]
+ [40 50 60]
+ [70 80 90]]        vertically stacked
+
+"""
+dstack1=np.dstack((arr1,arr2,arr3))
+print("Let's print d stack")
+print(dstack1)
+
+"""
+[[[10 40 70]
+  [20 50 80]
+  [30 60 90]]]   depth i.e. 0th element of both the arrays will be joined ,then 1st 		element of both the arrays will be joined and so on
+"""
+
+zerostack=np.stack((arr1,arr2,arr3),axis=0)  # row-wise stack
+print("let's print axis-0 stack")
+print(zerostack)
+
+"""
+[[10 20 30]
+ [40 50 60]
+ [70 80 90]]  it's a double dimension array, first array goes at 0th row and second 		at 1st row
+
+"""
+
+onestack=np.stack((arr1,arr2,arr3),axis=1)  # column-wise stack
+print("let's print axis-1 stack")
+print(onestack)
+
+"""
+[[10 40 70]
+ [20 50 80]
+ [30 60 90]]
+		it like first array is taken and stacked at 0th column and second is 		stacked at 1st column
+"""
+
+#  np.stack((arr1,arr2),axis=2)  # not possible

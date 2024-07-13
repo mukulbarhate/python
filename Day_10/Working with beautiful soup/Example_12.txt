@@ -1,0 +1,23 @@
+
+import requests
+
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
+r=requests.get("http://www.sachintourtravels.com/")  
+
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+ 
+imgs=soup.find_all("img")
+
+directory='D:\pythonbs4images'
+
+
+for img in imgs:
+    imglink=img.attrs.get("src")  
+    absolute_url = urljoin(r.url, imglink)  # We'll make them start with "http or https" 
+    print(absolute_url)
+    
+    
+    

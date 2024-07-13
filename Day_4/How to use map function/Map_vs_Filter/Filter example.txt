@@ -1,0 +1,16 @@
+"""
+in Python * is used to unpack the iterables
+"""
+
+
+def is_even(num):
+    return num % 2 == 0
+
+
+nums = [2, 4, 6, 7, 8]
+filtered = filter(is_even, nums)
+
+print(nums)
+print(filtered)
+print(*nums)
+print(*filtered)

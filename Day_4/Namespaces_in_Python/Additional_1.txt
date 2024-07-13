@@ -1,0 +1,10 @@
+def disp(var):
+    print(var)
+def show(var):
+    print(var)
+
+print(locals())
+
+
+
+{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x0000023BDB88C610>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': 'e:\\temp1\\Examples\\First.py', '__cached__': None, 'disp': <function disp at 0x0000023BDB7B3E20>, 'show': <function show at 0x0000023BDBCA16C0>}  

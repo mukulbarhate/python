@@ -1,0 +1,70 @@
+"""
+The casefold() method in Python converts all the uppercase letters in a string to lowercase letters.
+
+"""
+
+import pandas as pd
+import re
+proid = [1,2,3,4]
+proname = ["Soap","Perfume","Deo","Body_Wash"]
+price = [120,400,250,180]
+ 
+# dictionary of lists
+mydictionary1 = {'proid':proid,'proname':proname,'price':price}
+     
+mydataframe1 = pd.DataFrame(mydictionary1)
+print(mydataframe1)
+#    proid    proname  price
+# 0      1       Soap    120
+# 1      2    Perfume    400
+# 2      3        Deo    250
+# 3      4  Body_Wash    180
+
+print("without index ************************")
+print(mydataframe1.to_string(index=False))
+#  proid   proname  price
+#      1      Soap    120
+#      2   Perfume    400
+#      3       Deo    250
+#      4 Body_Wash    180
+
+print("\nproducts where name is Soap and Deo\n")
+pronames=['Soap','Deo']
+print(mydataframe1[mydataframe1.proname.isin(pronames)].to_string(index=False))  # case sensitive
+# proid proname  price
+#      1    Soap    120
+#      3     Deo    250
+
+print("\nproducts where name is not Soap and Deo\n")
+pronames=['Soap','Deo']
+print(mydataframe1[~mydataframe1.proname.isin(pronames)].to_string(index=False)) #case sensitive
+#  proid   proname  price
+#      2   Perfume    400
+#      4 Body_Wash    180
+
+print("\nproducts where name is  Soap and Deo with ignore case\n")
+pronames=['soAp','dEo']
+print(mydataframe1[mydataframe1.proname.str.fullmatch('soAp|deO',case=False)])
+#    proid proname  price
+# 0      1    Soap    120
+# 2      3     Deo    250
+
+print("\nproducts where name is  Soap and Deo with case\n")
+pronames=['soAp','dEo']
+print(mydataframe1[mydataframe1.proname.str.fullmatch('soAp|deO')])
+# Empty DataFrame
+# Columns: [proid, proname, price]
+# Index: []
+
+print("\nProducts start with D\n")
+print(mydataframe1[mydataframe1.proname.str.startswith('D')])
+#    proid proname  price
+# 2      3     Deo    250
+
+print("\nProducts start with d case sensitive\n")
+print(mydataframe1[mydataframe1.proname.str.casefold().str.startswith('d')])
+#    proid proname  price
+# 2      3     Deo    250
+
+
+

@@ -1,0 +1,8 @@
+# if you don't want to print index
+
+import pandas as pd
+
+first=pd.Series([10,20,30,40,50])
+print(first)
+print("*************")
+print(first.to_string(index=False))

@@ -1,0 +1,15 @@
+here we are reading request parameter inside "view.py" file
+
+
+def admin(request):
+    return HttpResponse("Welcome to Admin page  "+request.GET.get("uname"))
+
+
+when you run the application from browser , type:
+
+http://127.0.0.1:8000/Admin?uname="scott"
+
+make sure you get following output on the browser:
+
+Welcome to Admin page "scott"
+

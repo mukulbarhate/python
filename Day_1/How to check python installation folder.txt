@@ -1,0 +1,3 @@
+C:\Users\Sriram>where python
+C:\Users\Sriram\AppData\Local\Programs\Python\Python310\python.exe
+C:\Users\Sriram\AppData\Local\Microsoft\WindowsApps\python.exe

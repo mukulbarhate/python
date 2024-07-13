@@ -1,0 +1,4 @@
+ch=input("enter a character")
+val=ord(ch)
+disp=lambda x: print("it's lowercase") if val>=97 and val<=122 else (print("it's upper case") if val>=65 and val<=90 else print("not an alphabet"))
+disp(ch)

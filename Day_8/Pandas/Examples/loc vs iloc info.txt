@@ -1,0 +1,36 @@
+"""
+loc works on the given index of the dataframe rows
+iloc works on the original index (which always starts from the 0) of the dataframe rows
+"""
+
+
+# extract DataFrame rows as list
+
+from pandas import *
+
+mydata=DataFrame({'Sr':[1,2,3,4,5], 'Marks':[100,101,102,103,104]},index=['a','b','c','d','e'])
+print(mydata)
+print(mydata.loc['a':'c']) # rows from a to c
+print(mydata.loc[['b','e']]) # rows b and e     # we have to create list for 2 index so we created the list nested bracket
+print(mydata.iloc[0:3])
+
+
+"""
+One more example
+
+"""
+
+
+
+# from pandas import *
+
+# mydataframe=DataFrame({"proid":range(1,5),"proname":['soap','perfume','deo','powder']})
+# print(mydataframe)
+# mylist=mydataframe.loc[(mydataframe.proname=='perfume')].values.tolist()
+# print(mylist)
+# mylist=mydataframe.loc[(mydataframe.proname!='soap') & (mydataframe.proname!='powder')].values.tolist()
+# print(mylist)
+# mylist=mydataframe.iloc[:3].values.tolist();
+# print(mylist)
+# mylist=mydataframe.iloc[2:4,:2].values.tolist();
+# print(mylist)

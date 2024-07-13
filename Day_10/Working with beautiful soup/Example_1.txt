@@ -1,0 +1,9 @@
+import requests
+
+URL = "https://www.rediff.com/cricket"
+# URL='https://www.newyorker.com/'
+page = requests.get(URL)
+
+print(page.text)
+print("\n\n")
+print("type of page is\t",type(page))

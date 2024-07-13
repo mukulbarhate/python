@@ -1,0 +1,6 @@
+prnnos=[1,2,3,4,5]
+names=["Rahul","Rohit","Sachin","Anil","Saurav"]
+
+mydisp=lambda x,y: [{i:j} for i,j in zip(x,y)]
+
+print(mydisp(prnnos,names))

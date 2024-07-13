@@ -1,0 +1,35 @@
+# How to sort dictionary based on keys and values both 
+
+# sorted_footballers_by_name = sorted(footballers_goals.items(), key=lambda x:x[0])
+
+""" here "footballers_goals.items()" returns 5 tuples each with "key" and "value" of dictionary
+lamda x   represents each tuple
+x[0] represents  0th element of that tuple i.e "key" of the first entry of your dictionary
+x[1] represents  1st element of that tuple i.e "value" of the first entry of your dictionary
+
+That means to the "sorted" method you pass either "key" of the dictionary ( x[0])
+or value of the dictionary  ( x[1]) as a sorting strategy. """
+
+
+footballers_goals = {'Eusebio': 120, 'Cruyff': 104, 'Pele': 150, 'Ronaldo': 132, 'Messi': 125}
+
+temp=footballers_goals.items()
+print("Type of temp is\t",type(temp))
+print("Size of temp is\t",len(temp))
+
+for i in temp:
+    print("Type of i is\t",type(i),"\tValue of i is\t",i)
+
+sorted_footballers_by_name=sorted(footballers_goals)
+
+print(sorted_footballers_by_name)
+
+sorted_footballers_by_name = sorted(footballers_goals.items(), key=lambda x:x[0]) # x[0] means key
+
+print(sorted_footballers_by_name)
+
+sorted_footballers_by_goals = sorted(footballers_goals.items(), key=lambda x:x[1]) # x[1] means value
+
+print(sorted_footballers_by_goals)
+
+#sorted_footballers_by_goals = sorted(footballers_goals.items(), key=lambda x:x[2]) # IndexError: tuple index out of range

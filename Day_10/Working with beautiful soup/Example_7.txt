@@ -1,0 +1,11 @@
+# displaying all the titles of a given URL
+
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://www.rediff.com/cricket"
+page = requests.get(URL)
+soup=BeautifulSoup(page.text,'html.parser')
+s=soup.find_all('title')
+for i in s:
+    print(i)

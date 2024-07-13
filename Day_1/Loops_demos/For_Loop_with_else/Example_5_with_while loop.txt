@@ -1,0 +1,6 @@
+i=10
+while(i<18):
+    print(i)
+    i+=1
+else:
+    print("printed all the numbers")

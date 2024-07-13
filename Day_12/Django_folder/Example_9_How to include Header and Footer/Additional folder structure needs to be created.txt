@@ -1,0 +1,10 @@
+inside "myproject" create a folder
+	"static"
+
+inside "static" create a folder
+	"firstapp" [ this must match your app folder name which is there inside "myproject"]
+
+inside "firstapp" create a folder
+	"images"
+
+inside "images" copy all the required image files i.e. jpg ,gif etc.

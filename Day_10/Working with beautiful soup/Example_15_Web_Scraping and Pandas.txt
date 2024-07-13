@@ -1,0 +1,26 @@
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+
+# pip install lxml
+
+url = 'https://www.rediff.com/sports'
+
+response=requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+ 
+s = soup.find('div', class_='secstorybox sports topboxheight relative')
+content = s.find_all('a')
+
+links=[]
+messages=[]
+count=0
+for i in content:
+    links.append(i['href'])
+    messages.append(i.contents[0])
+mydict={'links':links,'messages':messages}
+
+# print(mydict)
+mydataframe=pd.DataFrame(mydict)
+print(mydataframe.to_string(index=False))
+mydataframe.to_csv("D:\pythonbs4images\sports.csv")

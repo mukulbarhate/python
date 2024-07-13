@@ -1,0 +1,16 @@
+import requests
+
+from bs4 import BeautifulSoup
+
+r = requests.get("https://www.rediff.com/news/report/kejriwal-stopped-taking-insulin-before-his-arrest-tihar-officials/20240420.htm")
+
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+
+print("****************")
+
+s1 = soup.findAll('a')
+for i in s1:
+    print(i)
+
+

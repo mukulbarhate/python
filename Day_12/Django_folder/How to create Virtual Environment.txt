@@ -1,0 +1,41 @@
+1) Go to terminal window inside your "VS code"
+2) change the directory in which you want to create virtual environment directory.
+3) e.g.  e:\work
+4) cd e:\work
+5) e:\work>  pip install virtualenv
+6) make sure you get a message "Successfully installed"
+7) e:\work>  virtualenv --version
+8) check the version of virtualenv software
+9) e:\work> virtualenv myenv (to create virtual environment)
+	here "myenv" is the name of virtual environment to be created inside "work" folder.
+check inside "work" directory whether "myenv" folder has been created or not.
+10) change to "myenv" folder
+11) e:\work\myenv>  scripts\activate  (to activate the environment)
+	this command by default will give you error
+
+"cannot be loaded because running scripts is disabled on this system"
+
+to solve this error,
+
+12) E:\work\myenv> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
+E:\work\myenv> scripts\activate
+
+13) make sure you can see following:
+(myenv) PS E:\work\myenv> 
+
+Once the virtual environment is activated, the name of your virtual environment ("myenv" in our case)will appear on the left side of the terminal. This will let you know that the virtual environment is currently active. Now you can install dependencies related to the project in this virtual environment. For example, if you are using Django 1.9 for a project, you can install it like you install other packages.
+
+e.g.
+
+(myenv) PS E:\work\myenv> pip install Django==4.2
+
+make sure Django 4.2 gets installed inside your "myenv" folder.
+
+"Successfully installed Django-4.2" 
+
+Once you are done with the work, you can deactivate the virtual environment by the following command:
+
+(myenv) PS E:\work\myenv> deactivate
+
+Now you will be back to the system’s default Python installation.
+

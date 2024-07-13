@@ -1,0 +1,13 @@
+# accept input
+
+from pandas import *
+
+mylist=[]
+print("enter values, 0 to exit")
+while True:
+    val=int(input())
+    if(val==0):
+        break
+    mylist.append(val)
+myseries=Series(mylist)
+print(myseries)

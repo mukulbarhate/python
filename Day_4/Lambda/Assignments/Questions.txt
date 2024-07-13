@@ -1,0 +1,44 @@
+1) write a function to accept a number and return its square using
+	a) normal function
+	b) lambda
+
+
+2) write a function to display "Hello World" using
+	a) normal function
+	b) lambda
+
+
+3) write a function with 2 arguments , second argument should be "default argument" and display them. Using
+	a) normal function 
+	b) lambda
+
+
+4) write a function with variable no. of arguments and display them. Using
+	a) normal function
+	b) lambda
+
+5) write a lambda to reverse the given string
+
+6) Given
+
+mylist=[10,20,30,(40,50,60),70,80]
+
+write a lambda expression to print the tuple from the list
+
+7) write lambda expression to sort any given list in a descending order.
+
+8) write a lambda expression to print those characters from a given string which ascii value is more than 110.
+
+9) write a lambda to print every alternate character of a given string
+
+10) Given
+
+prnnos=[1,2,3,4,5]
+names=["Rahul","Rohit","Sachin","Anil","Saurav"]
+
+write a lambda expression which creates a dictionary which consists of "prnnos" as keys and "names" as values.
+
+11) accept a character and using lambda print whether it is upper case or lower case or not an alphabet.
+
+
+

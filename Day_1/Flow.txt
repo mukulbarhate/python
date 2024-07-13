@@ -1,0 +1,30 @@
+Introduction to python
+
+How to Install Python on Windows
+
+Hello world application
+	[ on VS Code or Pycharm ]
+
+
+indentation in python
+
+How does Python work?
+
+
+Data types except sequence
+	typecasting in python
+Operators
+How to accept input in python
+if demos
+switch demos
+loop demos
+
+comments in Python
+
+
+
+Assignments
+
+
+
+

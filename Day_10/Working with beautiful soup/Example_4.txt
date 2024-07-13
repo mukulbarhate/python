@@ -1,0 +1,21 @@
+
+import requests
+
+from bs4 import BeautifulSoup
+
+r=requests.get("https://www.rediff.com/movies/review/do-aur-do-pyaar-review/20240419.htm")
+ 
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+ 
+s = soup.find('div', class_='table1')
+content = s.find_all('a')
+ 
+print(content)
+print("****************")
+
+s1=soup.find('div',id="arti_content_n")
+paragraph=s1.find('p',class_="rbig")
+
+print(paragraph)
+

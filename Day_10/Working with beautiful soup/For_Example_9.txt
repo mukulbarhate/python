@@ -1,0 +1,33 @@
+# How to download images from a particular URL using BeautifulSoup
+
+""" tqdm can help you create progress bars for data processing, training machine learning models, 
+multi-loop Python function, and downloading data from the internet. """
+
+import requests
+
+from bs4 import BeautifulSoup
+from tqdm import tqdm
+r=requests.get("https://statsroyale.com/cards")
+
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+ 
+imgs=soup.find_all("img")
+""" since we don't want to include first 3 images and last image while downloading, we have to
+slice the list as  [3:-1] i.e. it will start from 3rd index and go till second last """
+
+imgs=imgs[3:-1]
+directory='downloaded_images'
+for img in tqdm(imgs):
+    # img.attrs is a dictionary with 'src' as a key and the image link is a value
+    imglink=img.attrs.get("src")
+    # to get the binary form of an image
+    image=requests.get(imglink).content
+    """ rfind() method finds the last occurrence of the specified value,so here from the entire
+    image link we are interested in the content starts from the last / to the end. It means
+    we are interested in the actual image file name. """
+
+    filename=directory+imglink[imglink.rfind('/'):]
+    # so now in our case 'filename' would be 'downloaded_images/<name>.gif/jpg' 
+    with open(filename,"wb") as f:
+        f.write(image) 

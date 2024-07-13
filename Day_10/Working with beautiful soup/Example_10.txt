@@ -1,0 +1,35 @@
+# How to download images from a particular URL using BeautifulSoup
+
+""" tqdm can help you create progress bars for data processing, training machine learning models, 
+multi-loop Python function, and downloading data from the internet. """
+
+"""
+The rfind() method returns the highest index of the specified substring (the last occurrence of the substring) in the given string.
+import requests
+"""
+
+from bs4 import BeautifulSoup
+from tqdm import tqdm
+import requests
+
+
+r=requests.get("http://www.sachintourtravels.com/")
+
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+ 
+imgs=soup.find_all("img")
+
+directory='D:\pythonbs4images'
+for img in tqdm(imgs):
+    # img.attrs is a dictionary with 'src' as a key and the image link is a value
+    imglink=img.attrs.get("src")
+    # to get the binary form of an image
+    image=requests.get(imglink).content  # raise MissingSchema(
+#requests.exceptions.MissingSchema: Invalid URL 'images/sachintravel-logo.png': No scheme supplied.
+# it's because our image paths don't begin with "http or https"
+    
+    
+    filename=directory+imglink[imglink.rfind('/'):]
+    with open(filename,"wb") as f:
+       f.write(image) 

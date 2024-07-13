@@ -1,0 +1,33 @@
+given 2 2d arrays:
+
+fourth=np.array([[10,20,30],[40,50,60]])
+fifth=np.array([[70,80,90],[100,110,120]])
+
+that means we have to see them together as one 3d array.
+i.e.
+main_array[2][2][3]
+	i.e. we have two 2d arrays with [2][3]
+
+so we have 3 dimensions here
+first dimension (axis=0) means 
+	main_array[2] which gives us two 2d arrays (main_array[0] and main_array[1]) completely.
+axis=0 will give you two 2d arrays 
+sum axis=0 will simply add two 2d arrays as if they are placed one after the other i.e. behind 10  , 70 will come so 10+70
+behind 20, 80 will come so  20+80 and so on
+
+
+
+second dimension (axis=1) means
+	main_array[0][0] and main_array[0][1] give us two 1d arrays and  axis=1 here gives us axis=0 of single dimension arrays [ column-wise total ]
+
+third dimension (axis=2) means
+	it gives us axis=1 of single dimension arrays  [row-wise total]
+
+ 
+
+
+
+
+
+
+

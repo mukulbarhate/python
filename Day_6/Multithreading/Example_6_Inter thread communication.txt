@@ -1,0 +1,37 @@
+# example of  inter-thread communication
+
+import threading
+
+
+condition=threading.Condition()
+def production():
+    condition.acquire()
+    print("\nLet's produce\n")
+    for i in range(1,6):
+        print("producing\t",i)
+        if i==3:
+            condition.wait()
+    condition.notify_all()
+    condition.release()
+
+def consumption():
+    condition.acquire()
+    condition.notify_all()
+    print("\nLet's consume\n")
+    for i in range(1,6):
+        print("consuming\t",i)
+        if i==3:
+            condition.wait()
+    condition.release()
+
+t1 = threading.Thread(target=production)
+t2 = threading.Thread(target=consumption)
+
+t1.start()
+t2.start()
+
+t1.join()   # main thread will wait till t1 finishes
+t2.join()   # main thread will wait till t2 finishes
+
+print("Done")
+print("\nDone is printed by\t",threading.current_thread())

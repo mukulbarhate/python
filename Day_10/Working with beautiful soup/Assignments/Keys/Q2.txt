@@ -1,0 +1,12 @@
+import requests
+
+from bs4 import BeautifulSoup
+
+r = requests.get("https://www.rediff.com/headline.html")
+
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+
+# find all the anchor tags with "href"
+for image in soup.find_all('img'):
+    print(image.get('src'))

@@ -1,0 +1,20 @@
+format function
+
+help function
+
+docstrings
+
+Module,Package,Library
+
+package_Assignment
+
+
+Namespaces_in_Python
+
+
+Lambda
+
+
+How to use map function
+
+

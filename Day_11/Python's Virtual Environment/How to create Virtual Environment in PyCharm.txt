@@ -1,0 +1,75 @@
+how to check your project location?
+
+view
+	tools window
+		terminal
+
+here command prompt will appear which shows your project location.
+e.g
+PS C:\Users\Sriram\PycharmProjects\pythonProject>
+	this is also called as "global environment"
+
+
+
+how to check what all libraries you have installed inside "global environment"?
+
+give following command inside terminal command prompt:
+
+PS C:\Users\Sriram\PycharmProjects\pythonProject> pip list
+
+it will list out all the libraries you've installed inside global environment.
+
+how will you create a virtual environment inside your project?
+
+first change the terminal from "Power Shell" to cmd.exe, for that :
+
+file
+	settings
+		tools
+			terminal
+
+				shell path -  change to  cmd.exe
+
+come inside your project
+
+click on the terminal option from the bottom window
+
+make sure now it shows:
+
+C:\Users\Sriram\PycharmProjects\pythonProject>
+
+	it proves that you've changed your terminal from "Power Shell (PS)" to cmd.
+
+now, in order to create virtual environment give following command:
+
+C:\Users\Sriram\PycharmProjects\pythonProject> python -m venv venv
+
+it will take few seconds
+
+After creating the virtual environment, you need to activate it. In the terminal, give following command:
+
+C:\Users\Sriram\PycharmProjects\pythonProject> venv\Scripts\activate
+
+make sure terminal window shows:
+
+(venv) C:\Users\Sriram\PycharmProjects\pythonProject>
+
+it means you've activated your virtual environment.
+
+in order to list the available libraries inside the virtual environment, give following command:
+
+(venv) C:\Users\Sriram\PycharmProjects\pythonProject> pip list
+
+you will not see any libraries here. You may install later.
+
+To deactivate the virtual environment and return to the project folder, simply type deactivate in the terminal and press Enter.
+
+i.e.
+
+(venv) C:\Users\Sriram\PycharmProjects\pythonProject> deactivate
+
+make sure terminal now shows:
+
+C:\Users\Sriram\PycharmProjects\pythonProject>
+
+

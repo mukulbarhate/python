@@ -1,0 +1,12 @@
+# Cropping an image
+
+from PIL import Image
+
+img=Image.open("Ghost.jpg")
+# open "Ghost.jpg" inside Paint application and then decide the coordinates for cropping
+
+# area=(180,40,560,210)
+area=(77,83,275,280)
+img.crop(area).show()
+
+print("Done")

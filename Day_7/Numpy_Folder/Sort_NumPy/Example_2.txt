@@ -1,0 +1,23 @@
+import numpy as np
+
+# sort without any axis
+
+a = np.array([[12, 25], [30, 18]])
+arr1 = np.sort(a, axis=None)
+print("\nAlong None axis : \n", arr1)
+
+# sort along the first axis
+a = np.array([[12, 25], [30, 18]])
+arr1 = np.sort(a, axis=0)
+print("Along 0 axis : \n", arr1)
+
+a = np.array([[12, 25], [30, 18]])
+arr1 = np.sort(a, axis=1)
+print("\nAlong 1 axis : \n", arr1)
+
+print("Reverse order column-wise\n")
+arr1 = -np.sort(-a, axis=0)
+print(arr1)
+print("Reverse order row-wise\n")
+arr1 = -np.sort(-a, axis=1)
+print(arr1)

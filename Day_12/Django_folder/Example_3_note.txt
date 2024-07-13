@@ -1,0 +1,13 @@
+
+# disp function simply returns *response as a string*
+def disp(request):
+	return HttpResponse("Hello how are you")
+
+# home function returns "myhtml.html" *static page as a part of response*
+def home(request):
+    return render(request,'myhtml.html')
+
+# admin function , apart from returning the response also *retrieves the request parameter(uname here)* and returns the value inside it.
+
+def admin(request):
+    return HttpResponse("Welcome to Admin page  "+request.GET.get("uname"))

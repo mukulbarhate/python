@@ -1,0 +1,16 @@
+# Creating new image
+
+
+
+from PIL import Image,ImageDraw,ImageFont
+
+size=height,width=(300,300)
+img=Image.new("RGB",size,"blue")
+draw=ImageDraw.Draw(img)
+myfont=ImageFont.truetype("arial.ttf",30)
+# points=100,100
+points=69,100
+title="All \nthe best"
+draw.text(points, title,"black",font=myfont)
+img.show()
+print("Done")

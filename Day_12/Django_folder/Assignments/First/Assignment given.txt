@@ -1,0 +1,28 @@
+welcome page
+
+View Persons
+	on click of this link
+
+all the records of person table should be displayed.
+
+
+def result(request):
+	query
+		you will get records
+
+	store them in the list
+	store that list (mylist) in the dictionary  'records' as a key
+
+	render(request,'Welcome.html',{'records':mylist})
+
+
+welcome.html
+
+	{{records}}
+
+
+
+
+
+
+	

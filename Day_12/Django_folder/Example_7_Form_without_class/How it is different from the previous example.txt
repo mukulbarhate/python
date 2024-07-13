@@ -1,0 +1,1 @@
+no need to define class (.py file) in order to create a form.

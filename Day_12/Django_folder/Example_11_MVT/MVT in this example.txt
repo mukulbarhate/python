@@ -1,0 +1,3 @@
+Model - Employee class
+View - views.py  
+Template - index.html

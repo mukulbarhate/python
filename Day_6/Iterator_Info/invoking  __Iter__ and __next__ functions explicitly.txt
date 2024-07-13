@@ -1,0 +1,8 @@
+# myiter=iter([10,20,30])
+myiter=iter((10,20,30))
+myiter=iter({10,5,6})
+print(type(myiter))
+# print(myiter.__next__())
+# print(myiter.__next__())
+# print(myiter.__next__())
+# print(myiter.__next__())        #   StopIteration

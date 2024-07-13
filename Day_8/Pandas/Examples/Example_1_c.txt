@@ -1,0 +1,7 @@
+# create panda series using tuple
+
+from pandas import *
+
+mytuple=(100,200,300,400,500)
+myseries=Series(mytuple)
+print(myseries)

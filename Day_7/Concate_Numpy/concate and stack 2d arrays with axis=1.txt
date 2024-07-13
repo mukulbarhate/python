@@ -1,0 +1,66 @@
+# concate and stack 2d arrays with axis=1
+# axis=1 means   from  left to right direction
+
+import numpy as np
+arr1=np.array([[1,2,3],[4,5,6]])
+arr2=np.array([[7,8,9],[10,11,12]])
+arr3=np.concatenate((arr1,arr2),axis=1) #  it will concat 0th row of second 2d array with
+# 0th row of first 2d array and 1st row of second 2d array with 1st row of first 2d
+# array
+
+# print("output of concat")
+print(arr3)
+#  [[ 1  2  3  7  8  9]
+#  [ 4  5  6 10 11 12]]
+
+print("output of stack")
+print()
+print()
+
+arr4=np.stack((arr1,arr2),axis=1)
+"""
+since in 3d array axis=1 means axis=0 of 2d arrays which is for rows
+so it will take 0th rows of first and second 2d arrays and stack them
+one below other. then it will take 1st rows of first and second 2d arrays and stack
+them one below other.
+"""
+print(arr4)
+# [[[ 1  2  3]
+#   [ 7  8  9]]
+
+#  [[ 4  5  6]
+#   [10 11 12]]]
+
+print()
+print()
+
+arr5=np.stack((arr1,arr2),axis=0)
+
+"""
+since in 3d array axis=0 means no. of 2d arrays
+so it will stack 2nd 2d array below 1st 2d array.
+"""
+print(arr5)
+# [[[ 1  2  3]
+#   [ 4  5  6]]
+
+#  [[ 7  8  9]
+#   [10 11 12]]]
+
+
+arr6=np.stack((arr1,arr2),axis=2)
+
+"""
+since in 3d array axis=2 means axis=1 of 2d arrays which is for columns
+so it will take 0th row of first 2d array , stack it in the 0th column
+0th row of second 2d array, stack it in 1st column
+1st row of 1st 2d array in 0th column and 1st row of 2nd 2d array in 1st column.
+"""
+print(arr6)
+# [[[ 1  7]
+#   [ 2  8]
+#   [ 3  9]]
+
+#  [[ 4 10]
+#   [ 5 11]
+#   [ 6 12]]]

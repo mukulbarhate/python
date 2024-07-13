@@ -1,0 +1,8 @@
+""" The rfind() method returns the highest index of the specified substring (the last occurrence of the substring) in the given string.
+ """
+
+module = 'Python Programming'
+print('Last occurence of t: ', module.rfind('t'))
+print('Last occurence of n: ', module.rfind('n'))
+print('Last occurence of g: ', module.rfind('g'))
+print('Last occurence of program: ', module.rfind('Program'))

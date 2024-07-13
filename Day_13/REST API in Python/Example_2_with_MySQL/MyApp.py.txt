@@ -1,0 +1,65 @@
+from flask import Flask, request, jsonify
+from flask_sqlalchemy import SQLAlchemy # used for ORM-to deal with database using object oriented technique
+
+app=Flask(__name__)
+
+# database connectivity
+
+# %40 is used instead of @ here
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mysql%40123@localhost:3306/pythondb1'
+db = SQLAlchemy(app)
+
+# Define your database model
+class Person(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    address = db.Column(db.String(100), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+
+
+# Routes for CRUD operations
+# Create
+@app.route('/persons', methods=['POST'])
+def create_person():
+    data = request.json
+    new_person = Person(name=data['name'], address=data['address'],age=data['age'])
+    db.session.add(new_person)
+    db.session.commit()
+    return jsonify({'message': 'Person added successfully'})
+
+# Read
+@app.route('/persons', methods=['GET'])
+def get_products():
+    persons = Person.query.all()        # we get object it represent 1 row
+    result = [{'id': person.id, 'name': person.name, 'address': person.address,'age': person.age} for person in persons]
+    return jsonify(result)
+
+
+@app.route('/persons/<int:id>', methods=['GET'])
+def get_person(id):
+    person = Person.query.get_or_404(id)
+    return jsonify({'id': person.id, 'name': person.name, 'address': person.address,'age': person.age})
+
+# Update
+@app.route('/persons/<int:id>', methods=['PUT'])
+def update_person(id):
+    person = Person.query.get_or_404(id)
+    data = request.json
+    person.name = data['name']
+    person.address = data['address']
+    person.age = data['age']
+    db.session.commit()
+    return jsonify({'message': 'Person updated successfully'})
+
+# Delete
+@app.route('/persons/<int:id>', methods=['DELETE'])
+def delete_person(id):
+    person = Person.query.get_or_404(id)
+    db.session.delete(person)
+    db.session.commit()
+    return jsonify({'message': 'Person deleted successfully'})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

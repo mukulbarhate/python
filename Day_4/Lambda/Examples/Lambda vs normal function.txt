@@ -1,0 +1,13 @@
+With lambda function
+
+Supports single-line sometimes statements that return some value.	
+Good for performing short operations/data manipulations.
+Using the lambda function can sometime reduce the readability of code.	
+
+
+
+normal function
+
+Supports any number of lines inside a function block.
+Good for any cases that require multiple lines of code.
+We can use comments and function descriptions for easy readability.

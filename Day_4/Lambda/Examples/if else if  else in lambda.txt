@@ -1,0 +1,1 @@
+lambda <args> : <statement1> if <condition > ( <statement2> if <condition> else <statement3>)

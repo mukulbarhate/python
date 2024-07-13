@@ -1,0 +1,23 @@
+Open powershell window and give following command:
+
+pip install pywhatkit
+
+Type the following code in the python file:
+
+	First.py
+
+import pywhatkit
+# here 7,52 is time on which you want whatsapp message to go to the receiver
+
+pywhatkit.sendwhatmsg('+919270365282','Good Morning boss',7,52)
+
+
+	Run the above code , it will give you message:
+
+In 94 Seconds WhatsApp will open and after 15 Seconds Message will be Delivered!
+
+open the browser and wait
+	automatically "whatsapp web" will start and you can see the message.
+
+Also it will create "PyWhatKit_DB" file in the current working directory.
+

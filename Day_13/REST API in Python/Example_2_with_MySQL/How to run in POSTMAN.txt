@@ -1,0 +1,87 @@
+run your Flask application
+
+make sure server starts
+
+go to POSTMAN
+
+for get operation
+
+	type:
+		http://127.0.0.1:5000/persons 
+
+select "GET"
+
+click on "send"
+
+make sure it displays all the records of person table.
+
+
+
+for post operation
+
+	type
+		http://127.0.0.1:5000/persons
+
+select "POST"
+
+	select "Body" , raw  , JSON
+
+type following code:
+
+{
+    "name":"Arvind",
+    "address":"Juhu",
+    "age":45
+}
+
+click on "send"
+
+make sure data gets inserted into "person" table.
+
+
+
+
+to find out a specific person
+
+	type
+		http://127.0.0.1:5000/persons/15
+
+select "GET"
+
+click on "send"
+
+make sure it gives you the record with id 15.
+
+
+
+for delete
+	type
+		http://127.0.0.1:5000/persons/16
+
+select "DELETE"
+
+click on "send"
+
+make sure it deletes the record from "person" table where id is 16.
+
+
+
+for put
+	type
+		http://127.0.0.1:5000/persons/14
+
+select "PUT"
+
+	Body,  raw  , JSON
+
+type the following code:
+
+{
+    "name":"Sachin",
+    "address":"Bandra",
+    "age":50
+}
+
+click on "send"
+
+make sure it updates the record where id is 14.

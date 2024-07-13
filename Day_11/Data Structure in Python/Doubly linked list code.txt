@@ -1,0 +1,124 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev=None
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last=None
+    def add(self,data):
+        ref=Node(data)
+        if self.head==None:
+            self.head=ref
+            self.last=ref
+        else:
+            ref.prev=self.last
+            self.last.next=ref
+            self.last=ref
+    def display_from_head(self):
+        temp=self.head
+        while temp is not None:
+            print(temp.data)
+            temp=temp.next
+    def display_from_last(self):
+        temp=self.last
+        while temp is not None:
+            print(temp.data)
+            temp=temp.prev
+    def sort(self):
+        temp=0
+        prev=self.head
+        cur=self.head.next
+
+        while(prev is not self.last):
+            while(cur is not None):
+                if(prev.data>cur.data):
+                    temp=prev.data
+                    prev.data=cur.data
+                    cur.data=temp
+                cur=cur.next
+            prev=prev.next
+            cur=prev.next
+    def insert(self,data):
+        ref=Node(data)
+        if(ref.data<self.head.data):
+            self.head.prev=ref
+            ref.next=self.head
+            self.head=ref
+        elif(ref.data>self.last.data):
+            ref.prev=self.last
+            self.last.next=ref
+            self.last=ref
+        else:
+            prev1=self.head
+            cur1=self.head
+            while(ref.data>cur1.data):
+                prev1=cur1
+                cur1=prev1.next
+            ref.prev=prev1
+            ref.next=cur1
+            cur1.prev=ref
+            prev1.next=ref
+
+    def delete(self,data):
+        if(data==self.head.data):
+            cur=self.head
+            self.head=cur.next
+            self.head.prev=None
+        else:
+            cur1=self.head
+            while(cur1 is not None):
+                prev1=cur1
+                cur1=prev1.next
+                if(data==cur1.data):
+                    if(cur1==self.last):
+                        self.last=prev1
+                        prev1.next = None
+                        cur1 = None
+                    else:
+                        prev1.next=cur1.next
+                        cur1.next.prev=prev1
+                        cur1=None
+
+
+
+mylist=LinkedList()
+mylist.add(45)
+mylist.add(34)
+mylist.add(55)
+mylist.add(5)
+
+print("let's print the linked list from the head")
+mylist.display_from_head()
+print("let's print the linked list from the tail")
+mylist.display_from_last()
+print("let's sort the list")
+mylist.sort()
+print("print the sorted data from head")
+mylist.display_from_head()
+print("print the sorted data from tail")
+mylist.display_from_last()
+mylist.insert(3)
+print("After inserting in the beginning print the sorted data from head")
+mylist.display_from_head()
+mylist.insert(73)
+print("After inserting at the end print the sorted data from head")
+mylist.display_from_head()
+mylist.insert(63)
+print("After inserting in between print the sorted data from head")
+mylist.display_from_head()
+print("now let's try printing the list from the tail")
+mylist.display_from_last()
+mylist.delete(3)
+print("after deleting first node let's print from the head")
+mylist.display_from_head()
+mylist.delete(73)
+print("after deleting the last node let's print from the head")
+mylist.display_from_head()
+mylist.delete(45)
+print("after deleting the middle node let's print from the head")
+mylist.display_from_head()
+print("now at the end let's display the list from the tail")
+mylist.display_from_last()

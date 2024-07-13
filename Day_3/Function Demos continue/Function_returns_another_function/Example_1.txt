@@ -1,0 +1,30 @@
+
+# def disp1():
+#     print("inside disp1")
+#     return disp2
+
+# def disp2():
+#     print("inside disp2")
+
+# var1=disp1()
+# var1()  # here "disp2()" will be called
+
+# name="Sachin"
+def disp1():
+    print("inside disp1")
+    return disp2,show
+    # return name
+
+def disp2():
+    print("inside disp2")
+
+def show():
+    print("inside show")
+
+var1,var2=disp1()
+var1()
+var2()
+# if callable(var1):
+#     var1()
+# else:
+#     print("var1 is not callable")

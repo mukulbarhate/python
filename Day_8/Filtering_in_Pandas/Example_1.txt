@@ -1,0 +1,34 @@
+import pandas as pd
+import re
+proid = [1,2,3,4]
+proname = ["Soap","Perfume","Deo","Body_Wash"]
+price = [120,400,250,180]
+ 
+# dictionary of lists
+mydictionary1 = {'proid':proid,'proname':proname,'price':price}
+     
+mydataframe1 = pd.DataFrame(mydictionary1)
+print(mydataframe1)
+#    proid    proname  price
+# 0      1       Soap    120
+# 1      2    Perfume    400
+# 2      3        Deo    250
+# 3      4  Body_Wash    180
+print("without index ************************")
+print(mydataframe1.to_string(index=False))
+#  proid   proname  price
+#      1      Soap    120
+#      2   Perfume    400
+#      3       Deo    250
+#      4 Body_Wash    180
+print("\nproducts where price more than 200\n")
+print(mydataframe1[mydataframe1.price>200].to_string(index=False))          # to avoid index 
+#  proid proname  price
+#      2 Perfume    400
+#      3     Deo    250
+
+print(mydataframe1.price > 200)
+# 0    False
+# 1     True
+# 2     True
+# 3    False

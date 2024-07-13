@@ -1,0 +1,18 @@
+from multipledispatch import dispatch
+
+class Sample:
+    @dispatch(int)
+    def __init__(self,num1):
+        self.num1=num1
+        print("inside one param init")
+    @dispatch(int,int)
+    def __init__(self,num1,num2):
+        self.num1=num1
+        self.num2=num2
+        print("inside two params init")
+
+s1=Sample(100)
+s2=Sample(5,8)
+print(s1)
+print(s2)
+

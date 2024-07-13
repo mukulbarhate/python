@@ -1,0 +1,21 @@
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+
+# pip install lxml
+
+url = 'https://www.rediff.com/sports'
+
+response=requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+ 
+s = soup.find('div', class_='secstorybox sports topboxheight relative')
+content = s.find_all('a')
+# print("Type of content is\t",type(content))
+
+for i in content:
+    # print("Type of i is\t",type(i))     # There is href and content property in <class 'bs4.element.Tag'>
+    
+    print(i['href'],"\t",i.contents[0])   # content is result set it has tag class object 
+    # break
+

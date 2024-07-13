@@ -1,0 +1,1 @@
+To configure the font used in the PyCharm interface (tool windows, toolbars, menus, and so on), open the IDE settings "Ctrl Alt OS", and go to Appearance & Behavior | Appearance. From the Use custom font list, select a font and specify the font size in the Size field

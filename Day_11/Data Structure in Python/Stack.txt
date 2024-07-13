@@ -1,0 +1,50 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+    def push(self,data):
+       ref=Node(data)
+       if self.top==None:
+           self.top=ref
+       else:
+           ref.next=self.top
+           self.top=ref
+    def display(self):
+       if self.top is None:
+          print("Stack is empty")
+          return
+       else:
+          cur=self.top
+          while(cur is not None):
+            print(cur.data)
+            cur=cur.next
+
+    def peek(self):
+        if self.top is None:
+            print("list is empty")
+            return
+        print(self.top.data)
+    def pop(self):
+        if self.top is None:
+            print("list is empty")
+            return
+        cur=self.top
+        self.top=cur.next
+        cur=None
+mystack=Stack()
+mystack.push(10)
+mystack.push(20)
+mystack.push(30)
+mystack.push(40)
+print("let's print entire stack")
+mystack.display()
+print("let's print top element")
+mystack.peek()
+print("let's pop top element")
+mystack.pop()
+print("let's print entire stack after pop operation")
+mystack.display()

@@ -1,0 +1,14 @@
+"""
+in Python * is used to unpack the iterables
+"""
+
+def square(num):
+    return num * num
+
+nums = [1, 2, 3, 4, 5]
+mapped = map(square, nums)
+
+print(nums)
+print(mapped)
+print(*nums)
+print(*mapped)

@@ -1,0 +1,10 @@
+from urllib.parse import urlparse,parse_qs
+
+
+url = "https://www.rediff.com/cricket/report/ipl-2024-mi-won-the-game-but-ashustosh-won-hearts-harbhajan-singh/20240419.htm?subject=Python&test=practical"
+
+parsed_url = urlparse(url)
+print(parsed_url.port)
+print(parsed_url.hostname)
+print(parsed_url.path)
+print(parse_qs(parsed_url.query))           # subject=Python&test=practical

@@ -1,0 +1,11 @@
+import numpy as np
+first=np.arange(10,91,10) # 3 rows,3 cols ,  10 to 90 values with 10 as a skip value
+# without shape or reshape
+print(first)
+first.shape=(3,3)  # changes the shape of original array
+print(first)
+print("************")
+second=first.reshape(9,1)  # creates a new array with the new shape
+print(first)
+print("***************")
+print(second)
